@@ -1,6 +1,6 @@
 # **Recommendation Engine Project**
-You can check project in the link: https://github.com/TranDat24318791998/Udacity_IBM_Recommendation_System
-If you can check notebook, please try with html file
+You can check project in the link: https://github.com/TranDat24318791998/Udacity_IBM_Recommendation_System.
+If you can't check notebook, please try with html file
 
 ## **Installations**
 This project requires **Python 3.x** and the following Python libraries:
