@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Recommendations_with_IBM (1)</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>Recommendations_with_IBM</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -9911,7 +9911,53 @@ C:\Users\CSTra\AppData\Local\Temp\ipykernel_13764\3567218042.py:25: FutureWarnin
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Based on the graph, the model achieves high accuracy on the training set as the number of latent features increases. However, on the test set, the performance gradually decreases as the number of features increases, indicating that the model is likely to be overfitting. This could be due to the imbalanced data with very few positive interactions compared to negative ones. To improve, it is necessary to increase the number of users and posts in the dataset, and apply imbalance treatment techniques such as SMOTE or change the weights during training.</p>
+<h3 id="Analysis-and-Practical-Evaluation-Plan-for-the-Recommendation-System">Analysis and Practical Evaluation Plan for the Recommendation System<a class="anchor-link" href="#Analysis-and-Practical-Evaluation-Plan-for-the-Recommendation-System">¶</a></h3><p>Based on the graph, the recommendation system demonstrates high accuracy on the training set as the number of latent features increases. However, the performance on the test set gradually decreases with an increasing number of latent features, indicating potential overfitting. This is likely due to the imbalanced nature of the dataset, where negative interactions dominate positive ones. To address this, methods such as SMOTE for synthetic oversampling or reweighting classes during training could be applied.</p>
+<h3 id="Proposed-Method-to-Evaluate-the-Recommendation-System-in-Practice">Proposed Method to Evaluate the Recommendation System in Practice<a class="anchor-link" href="#Proposed-Method-to-Evaluate-the-Recommendation-System-in-Practice">¶</a></h3><p>To properly evaluate the recommendation system's performance in a real-world scenario, the following experimental setup is proposed:</p>
+<ol>
+<li><p><strong>Define Evaluation Metrics</strong>:</p>
+<ul>
+<li>Use standard recommendation system metrics such as Precision, Recall, F1-score, and Mean Average Precision (MAP) to measure the system's effectiveness.</li>
+<li>Consider metrics that reflect user engagement and satisfaction, like click-through rate (CTR) or time spent on recommended content.</li>
+</ul>
+</li>
+<li><p><strong>Set Up Control Groups</strong>:</p>
+<ul>
+<li>Divide the user base into groups where one uses the recommendation system (treatment group) and the other does not (control group). This setup allows for a comparison of the system's impact on user behavior.</li>
+</ul>
+</li>
+<li><p><strong>Implement A/B Testing</strong>:</p>
+<ul>
+<li>Use A/B testing or randomized controlled trials to validate the effectiveness of the recommendation system.</li>
+<li>Randomly assign users to different configurations of the recommendation system to test variations (e.g., different numbers of latent features or algorithms).</li>
+</ul>
+</li>
+<li><p><strong>Address Class Imbalance Challenges</strong>:</p>
+<ul>
+<li>Mitigate the effects of class imbalance using oversampling (e.g., SMOTE) for underrepresented interactions or assigning higher weights to minority classes during training.</li>
+<li>Monitor the distribution of recommended versus non-recommended items to ensure balanced outputs.</li>
+</ul>
+</li>
+<li><p><strong>Analyze User Feedback</strong>:</p>
+<ul>
+<li>Collect qualitative and quantitative user feedback on the recommendations to understand satisfaction levels and identify improvement opportunities.</li>
+</ul>
+</li>
+</ol>
+<h3 id="Practical-Challenges-and-Mitigation-Strategies">Practical Challenges and Mitigation Strategies<a class="anchor-link" href="#Practical-Challenges-and-Mitigation-Strategies">¶</a></h3><ul>
+<li><strong>Class Imbalance</strong>:<ul>
+<li>Heavily imbalanced datasets may skew the recommendations towards popular items. Address this by using resampling techniques or adjusting class weights.</li>
+</ul>
+</li>
+<li><strong>Scalability</strong>:<ul>
+<li>As the user base grows, ensure the recommendation system can scale effectively by optimizing the computational complexity of matrix factorization and leveraging distributed computing frameworks.</li>
+</ul>
+</li>
+<li><strong>Evaluation Bias</strong>:<ul>
+<li>Minimize evaluation bias by ensuring diverse user demographics are represented in the experiment.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Conclusion">Conclusion<a class="anchor-link" href="#Conclusion">¶</a></h3><p>This plan provides a structured approach to evaluate the recommendation system's performance both quantitatively and qualitatively. By combining robust experimental design, practical considerations, and targeted strategies for addressing challenges, the system can be refined to deliver more accurate and user-friendly recommendations.</p>
 </div>
 </div>
 </div>
